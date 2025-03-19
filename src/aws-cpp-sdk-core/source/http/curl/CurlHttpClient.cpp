@@ -849,6 +849,14 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
             }
         }
 
+        ByteBuffer errorBuffer(CURL_ERROR_SIZE);
+        if (errorBuffer.GetUnderlyingData() && errorBuffer.GetSize() >= CURL_ERROR_SIZE) {
+          errorBuffer[0] = '\0';
+          curl_easy_setopt(connectionHandle, CURLOPT_ERRORBUFFER, errorBuffer.GetUnderlyingData());
+        } else {
+          AWS_LOGSTREAM_ERROR(CURL_HTTP_CLIENT_TAG, "Failed to allocate CURLOPT_ERRORBUFFER");
+        }
+
         OverrideOptionsOnConnectionHandle(connectionHandle);
         Aws::Utils::DateTime startTransmissionTime = Aws::Utils::DateTime::Now();
         CURLcode curlResponseCode = curl_easy_perform(connectionHandle);
@@ -858,9 +866,12 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
             response->SetClientErrorType(CoreErrors::NETWORK_CONNECTION);
             Aws::StringStream ss;
             ss << "curlCode: " << curlResponseCode << ", " << curl_easy_strerror(curlResponseCode);
+            if (errorBuffer.GetUnderlyingData() && errorBuffer.GetSize() >= CURL_ERROR_SIZE) {
+              errorBuffer[CURL_ERROR_SIZE-1] = '\0';
+              ss << "; Details: " << errorBuffer.GetUnderlyingData();
+            }
             response->SetClientErrorMessage(ss.str());
-            AWS_LOGSTREAM_ERROR(CURL_HTTP_CLIENT_TAG, "Curl returned error code " << curlResponseCode
-                    << " - " << curl_easy_strerror(curlResponseCode));
+            AWS_LOGSTREAM_ERROR(CURL_HTTP_CLIENT_TAG, "Curl returned error: " << response->GetClientErrorMessage());
         }
         else if(!shouldContinueRequest)
         {
@@ -976,6 +987,8 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
             AWS_LOGSTREAM_ERROR(CURL_HTTP_CLIENT_TAG, ss.str());
         }
         request->AddRequestMetric(GetHttpClientMetricNameByType(HttpClientMetricsType::RequestLatency), (DateTime::Now() - startTransmissionTime).count());
+
+        curl_easy_setopt(connectionHandle, CURLOPT_ERRORBUFFER, nullptr);
     }
 
     if (headers)
